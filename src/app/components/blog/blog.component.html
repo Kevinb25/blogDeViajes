@@ -1,0 +1,11 @@
+<section class="container">
+    <h2>Lista De blogs</h2>
+    <hr>
+    <div class="row g-3">
+        @for(post of arrPosts; track post.id){
+        <article class="col-12 col-md-6 col-xl-4">
+            <app-card-post [allPosts]="post"></app-card-post>
+        </article>
+        }
+    </div>
+</section>

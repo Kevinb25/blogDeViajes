@@ -1,0 +1,18 @@
+<div class="card p-3">
+    <div class="d-flex">
+        <figure>
+            <img [src]="allPosts.imagen" alt="">
+        </figure>
+    </div>
+    <div>
+        <h3>{{allPosts.titulo}}</h3>
+        <p> {{allPosts.categoria.titulo}}</p>
+        <div class="d-flex gap-3">
+            <p>{{allPosts.autor}}</p>
+            <p>{{allPosts.fecha}}</p>
+        </div>
+        <div>
+            <button class="btn">Leer Post</button>
+        </div>
+    </div>
+</div>
