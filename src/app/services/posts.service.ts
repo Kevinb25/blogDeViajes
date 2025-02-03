@@ -1,9 +1,7 @@
-import { category } from './../db/posts.db';
-
 import { Injectable } from '@angular/core';
 import { IPost } from '../interfaces/ipost.interface';
 import { Posts } from '../db/posts.db';
-import { ICategory } from '../interfaces/icategory.interface';
+
 
 
 @Injectable({

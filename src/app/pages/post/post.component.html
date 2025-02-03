@@ -1,1 +1,23 @@
-<p>post works!</p>
+<section class="container my-3 card">
+    <!--   <div class="card"> -->
+    <div class="row">
+        <div>
+            <figure class="col-12 col-md-4">
+                <img [src]="postUsuario.imagen">
+            </figure>
+            <p>{{postUsuario.categoria.titulo}}</p>
+        </div>
+        <div class=" col-12 col-md-8">
+            <h1>{{postUsuario.titulo}}</h1>
+            <div>
+                <p>{{postUsuario.texto}}</p>
+                <div>
+                    <p>{{postUsuario.autor}}</p>
+                    <p>{{postUsuario.fecha}}</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn" [routerLink]="['home']">Volver a Home</button>
+    </div>
+    <!--     </div> -->
+</section>

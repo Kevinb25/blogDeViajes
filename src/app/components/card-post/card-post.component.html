@@ -12,7 +12,7 @@
             <p>{{allPosts.fecha}}</p>
         </div>
         <div>
-            <button class="btn">Leer Post</button>
+            <button class="btn" [routerLink]="['/post',allPosts.id]">Leer Post</button>
         </div>
     </div>
 </div>
