@@ -38,7 +38,6 @@ export class PostsService {
   getAllCategories(): string[] {
     return this.categoryList
 
-
   }
 
 }

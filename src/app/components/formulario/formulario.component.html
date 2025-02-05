@@ -1,0 +1,60 @@
+<form [formGroup]="formModel" (ngSubmit)="getDataForm()">
+
+    <div>
+        <label class="form-label" for="titulo">Introduce un titulo para tu post</label>
+        <input class="form-control" type="text" id="titulo" formControlName="titulo">
+        @if(checkErrorField('titulo' , 'required')){
+        <p class="error">El campo es obligatorio</p>
+        }
+        @if(checkErrorField('titulo' , 'minlength')){
+        <p class="error">El titulo debe contener al menos 8 caracteres</p>
+        }
+    </div>
+
+    <div>
+        <label class="form-label" for="texto">Escribe una descripcion de tu post</label>
+        <input class="form-control" type="text" id="texto" formControlName="texto">
+        @if(checkErrorField('texto' , 'required')){
+        <p class="error">El campo es obligatorio</p>
+        }
+        @if(checkErrorField('texto' , 'minlength')){
+        <p class="error">El titulo debe contener al menos 10 caracteres</p>
+        }
+    </div>
+
+    <div>
+        <label class="form-label" for="autor">Indica tu nombre y apellido</label>
+        <input class="form-control" type="text" id="autor" formControlName="autor">
+        @if(checkErrorField('autor' , 'required')){
+        <p class="error">El campo es obligatorio</p>
+        }
+        @if(checkErrorField('autor' , 'minlength')){
+        <p class="error">El titulo debe contener al menos 8 caracteres</p>
+        }
+    </div>
+
+    <div>
+        <label class="form-label" for="imagen">Introduce la URL de la imagen que quieres compartir</label>
+        <input class="form-control" type="text" id="imagen" formControlName="imagen">
+        @if(checkErrorField('autor' , 'required')){
+        <p class="error">El campo es obligatorio</p>
+        }
+    </div>
+
+    <div>
+        <label class="form-label" for="fecha">Introduce un fecha para tu post</label>
+        <input class="form-control" type="date" id="fecha" formControlName="fecha">
+    </div>
+
+    <div>
+        <label class="form-label" for="categoria">Introduce un categoria para tu post</label>
+        <input class="form-control" type="text" id="categoria" formControlName="categoria">
+        @if(checkErrorField('autor' , 'required')){
+        <p class="error">El campo es obligatorio</p>
+        }
+    </div>
+    <div>
+        <input type="submit" [disabled]="!formModel.valid" value="Enviar" class="btn">
+        <input type="submit" value="Borrar Todo" class="btn">
+    </div>
+</form>
