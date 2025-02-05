@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { PostsService } from '../../services/posts.service';
 
 @Component({
   selector: 'app-formulario',
@@ -10,6 +11,7 @@ import { FormGroup, Validators, ReactiveFormsModule, FormControl } from '@angula
 export class FormularioComponent {
 
   formModel: FormGroup;
+  postsService = inject(PostsService)
 
   constructor() {
     this.formModel = new FormGroup({
@@ -25,8 +27,10 @@ export class FormularioComponent {
         Validators.required,
         Validators.minLength(8)
       ]),
-      imagen: new FormControl("", [Validators.required]),
-      fecha: new FormControl("", []),
+      imagen: new FormControl("", [
+        Validators.required,
+        Validators.pattern(/^http:\/\/.+$/)
+      ]),
       categoria: new FormControl("", [
         Validators.required
       ]),
@@ -36,6 +40,9 @@ export class FormularioComponent {
 
   getDataForm() {
     console.log(this.formModel.value)
+    const respuesta = this.postsService.insert((this.formModel.value))
+
+    this.formModel.reset()
   }
 
   checkErrorField(field: string, error: string): boolean {
@@ -43,5 +50,10 @@ export class FormularioComponent {
       return true
     }
     return false
+  }
+
+  resetForm() {
+    this.formModel.reset();
+
   }
 }

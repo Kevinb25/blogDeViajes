@@ -1,7 +1,7 @@
 import { ICategory } from "./icategory.interface";
 
 export interface IPost {
-    id: number,
+    id?: number,
     titulo: string,
     texto: string,
     autor: string,

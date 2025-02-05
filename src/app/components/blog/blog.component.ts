@@ -1,3 +1,4 @@
+
 import { Component, inject } from '@angular/core';
 import { IPost } from '../../interfaces/ipost.interface';
 import { PostsService } from '../../services/posts.service';
@@ -14,12 +15,13 @@ import { SelectCategoryComponent } from "./select-category/select-category.compo
   styleUrl: './blog.component.css'
 })
 export class BlogComponent {
-
+  posts: IPost[] = []
   arrPosts: IPost[] = [];
   postsServices = inject(PostsService);
 
   ngOnInit() {
     this.arrPosts = this.postsServices.getAll()
+    this.posts = this.postsServices.getNewPost()
 
   }
 

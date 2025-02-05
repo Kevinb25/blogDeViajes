@@ -36,25 +36,24 @@
     <div>
         <label class="form-label" for="imagen">Introduce la URL de la imagen que quieres compartir</label>
         <input class="form-control" type="text" id="imagen" formControlName="imagen">
-        @if(checkErrorField('autor' , 'required')){
+        @if(checkErrorField('imagen' , 'required')){
         <p class="error">El campo es obligatorio</p>
         }
-    </div>
+        @if(checkErrorField('imagen', 'pattern')){
+        <p class="error">Las Url deben comenzar con http://</p>
+        }
 
-    <div>
-        <label class="form-label" for="fecha">Introduce un fecha para tu post</label>
-        <input class="form-control" type="date" id="fecha" formControlName="fecha">
     </div>
 
     <div>
         <label class="form-label" for="categoria">Introduce un categoria para tu post</label>
         <input class="form-control" type="text" id="categoria" formControlName="categoria">
-        @if(checkErrorField('autor' , 'required')){
+        @if(checkErrorField('categoria' , 'required')){
         <p class="error">El campo es obligatorio</p>
         }
     </div>
     <div>
         <input type="submit" [disabled]="!formModel.valid" value="Enviar" class="btn">
-        <input type="submit" value="Borrar Todo" class="btn">
+        <input type="button" value="Borrar todo" class="btn" (click)="resetForm()">
     </div>
 </form>

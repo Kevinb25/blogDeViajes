@@ -1,8 +1,8 @@
-import { category } from './../db/posts.db';
+
 import { Injectable } from '@angular/core';
 import { IPost } from '../interfaces/ipost.interface';
 import { Posts } from '../db/posts.db';
-import { ICategory } from '../interfaces/icategory.interface';
+
 
 
 
@@ -13,7 +13,8 @@ export class PostsService {
 
   private posts: IPost[] = Posts;
   private categoryList: string[] = []
-
+  private arrPosts: IPost[] = [] /* cambios */
+  private id: number = 15
   constructor() {
     this.categoryList = Array.from(new Set(Posts.map(post => post.categoria.titulo)))
   }
@@ -39,6 +40,17 @@ export class PostsService {
     return this.categoryList
 
   }
-
+  insert(newPost: IPost): any {
+    let busqueda = this.arrPosts.find(post => post.titulo.toLowerCase() === newPost.titulo.toLowerCase())
+    if (busqueda === undefined) {
+      newPost.id = this.id
+      this.arrPosts.push(newPost)
+      this.id++
+    } else {
+      return { message: 'Este Post ya existe' };
+    }
+  }
+  getNewPost(): IPost[] {
+    return this.arrPosts
+  }
 }
-

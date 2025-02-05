@@ -9,6 +9,7 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
   reloadPosts() {
-    window.location.reload();
+
   }
+
 }
