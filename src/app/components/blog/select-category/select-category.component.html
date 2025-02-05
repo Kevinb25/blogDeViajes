@@ -1,0 +1,7 @@
+<select (change)="getCategory($event)" class="form-select">
+    <option value="">Categorias</option>
+    @for(categoria of categoryList; track categoria){
+    <option [value]="categoria">{{categoria}}</option>
+    }
+
+</select>

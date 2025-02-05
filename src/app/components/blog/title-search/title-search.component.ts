@@ -20,10 +20,12 @@ export class TitleSearchComponent {
 
   getTitle() {
     this.busquedaEmitida.emit(this.titleForm.value.title)
-
+    this.titleForm.reset()
   }
+
   clearSearch() {
     this.titleForm.reset();
     this.busquedaEmitida.emit('');
   }
+
 }

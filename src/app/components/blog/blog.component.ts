@@ -27,5 +27,8 @@ export class BlogComponent {
     this.arrPosts = this.postsServices.getByTitle(event)
   }
 
+  getByCategory(event: string) {
 
+    this.arrPosts = this.postsServices.getCategory(event);
+  }
 }

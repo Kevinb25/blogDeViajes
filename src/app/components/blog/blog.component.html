@@ -2,7 +2,7 @@
     <app-title-search (busquedaEmitida)="searchByTitle($event)"></app-title-search>
 </div>
 <div>
-    <app-select-category></app-select-category>
+    <app-select-category (seleccionEmitida)="getByCategory($event)"></app-select-category>
 </div>
 <section class="container">
     <h2>Lista De blogs</h2>
