@@ -1,7 +1,7 @@
 <div class="my-3">
     <form class="d-flex gap-3" [formGroup]="titleForm" (ngSubmit)="getTitle()">
         <input type="text" placeholder="Busca Un Titulo" class="form-control" formControlName="title">
-        <input type="submit" value="buscar" class="btn">
-        <input type="submit" value="borrar" class="btn" (click)="clearSearch()">
+        <input type="submit" value="buscar" class="btn mx-2 btn-outline-secondary">
+        <input type="submit" value="borrar" class="btn mx-2 btn-outline-secondary" (click)="clearSearch()">
     </form>
 </div>

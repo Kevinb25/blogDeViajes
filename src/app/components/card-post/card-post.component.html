@@ -1,18 +1,18 @@
 <div class="card p-3">
     <div class="d-flex">
-        <figure>
-            <img [src]="allPosts.imagen" alt="">
+        <figure class="figure">
+            <img [src]="allPosts.imagen" class="figure-img img-fluid rounded" alt="">
         </figure>
     </div>
     <div>
-        <h3>{{allPosts.titulo}}</h3>
-        <p> {{allPosts.categoria.titulo}}</p>
-        <div class="d-flex gap-3">
+        <h3 class="text-center mt-2">{{allPosts.titulo}}</h3>
+        <p class="categoria"> {{allPosts.categoria.titulo}}</p>
+        <div class="d-flex gap-3 fechaAutor">
             <p>{{allPosts.autor}}</p>
             <p>{{allPosts.fecha}}</p>
         </div>
-        <div>
-            <button class="btn" [routerLink]="['/post',allPosts.id]">Leer Post</button>
+        <div class="text-center">
+            <button class="btn btn-secondary mt-3" [routerLink]="['/post',allPosts.id]">Leer Post</button>
         </div>
     </div>
 </div>

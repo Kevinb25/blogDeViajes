@@ -1,0 +1,8 @@
+select {
+    width: 8.5rem;
+    background-color: darkgrey;
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: white;
+    font-weight: bold;
+}

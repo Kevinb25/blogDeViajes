@@ -52,8 +52,8 @@
         <p class="error">El campo es obligatorio</p>
         }
     </div>
-    <div>
-        <input type="submit" [disabled]="!formModel.valid" value="Enviar" class="btn">
-        <input type="button" value="Borrar todo" class="btn" (click)="resetForm()">
+    <div class="mt-6 text-center">
+        <input type=" submit" [disabled]="!formModel.valid" value="Enviar" class="btn mx-2 btn-outline-secondary">
+        <input type="button" value="Borrar" class="btn mx-2 btn-outline-secondary" (click)="resetForm()">
     </div>
 </form>
