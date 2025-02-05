@@ -19,7 +19,9 @@ export class PostsService {
     return this.posts.find(post => post.id === id)
   }
 
-
+  getByTitle(title: string): IPost[] {
+    return this.posts.filter(post => post.titulo.toLocaleLowerCase().includes(title.toLocaleLowerCase()));
+  }
 
 }
 

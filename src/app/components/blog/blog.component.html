@@ -1,3 +1,9 @@
+<div>
+    <app-title-search (busquedaEmitida)="searchByTitle($event)"></app-title-search>
+</div>
+<div>
+    <app-select-category></app-select-category>
+</div>
 <section class="container">
     <h2>Lista De blogs</h2>
     <hr>
@@ -6,6 +12,8 @@
         <article class="col-12 col-md-6 col-xl-4">
             <app-card-post [allPosts]="post"></app-card-post>
         </article>
+        }@empty {
+        <h3>No se ha encontrado resultado</h3>
         }
     </div>
 </section>

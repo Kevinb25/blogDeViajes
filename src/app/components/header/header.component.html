@@ -4,7 +4,7 @@
     </div>
     <div class="container">
         <ul class="ms-auto d-flex align-content-center ulHeader">
-            <li class="btn mx-2 btn-outline-secondary"><a [routerLink]="['/home']">Home</a></li>
+            <li (click)="reloadPosts()" class="btn mx-2 btn-outline-secondary"><a [routerLink]="['/home']">Home</a></li>
             <li class="btn mx-2 btn-outline-secondary"><a [routerLink]="['/new']">New</a></li>
         </ul>
     </div>
